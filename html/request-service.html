@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request a Service</title>
+    <link rel="stylesheet" href="../styles/request-service.css" />
+    <script src="../scripts/service-request.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <p>Request a Service</p>
+    </nav>
+    <main>
+      <div class="service-type">
+        <h2>Select Service Type</h2>
+        <div class="grid">
+          <div class="service-option selected-service" id="delivery">
+            <svg
+              class="service-option-icon"
+              viewBox="0 -960 960 960"
+              style="fill: white"
+            >
+              <path
+                d="M280-160q-50 0-85-35t-35-85H60l18-80h113q17-19 40-29.5t49-10.5q26 0 49 10.5t40 29.5h167l84-360H182l4-17q6-28 27.5-45.5T264-800h456l-37 160h117l120 160-40 200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H400q0 50-35 85t-85 35Zm357-280h193l4-21-74-99h-95l-28 120Zm-19-273 2-7-84 360 2-7 34-146 46-200ZM20-427l20-80h220l-20 80H20Zm80-146 20-80h260l-20 80H100Zm180 333q17 0 28.5-11.5T320-280q0-17-11.5-28.5T280-320q-17 0-28.5 11.5T240-280q0 17 11.5 28.5T280-240Zm400 0q17 0 28.5-11.5T720-280q0-17-11.5-28.5T680-320q-17 0-28.5 11.5T640-280q0 17 11.5 28.5T680-240Z"
+              />
+            </svg>
+            <p>Delivery</p>
+          </div>
+          <div class="service-option" id="shopping">
+            <svg class="service-option-icon" viewBox="0 -960 960 960">
+              <path
+                d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"
+              />
+            </svg>
+            <p>Shopping</p>
+          </div>
+          <div class="service-option" id="errands">
+            <svg class="service-option-icon" viewBox="0 -960 960 960">
+              <path
+                d="M520-40v-240l-84-80-40 176-276-56 16-80 192 40 64-324-72 28v136h-80v-188l158-68q35-15 51.5-19.5T480-720q21 0 39 11t29 29l40 64q26 42 70.5 69T760-520v80q-66 0-123.5-27.5T540-540l-24 120 84 80v300h-80Zm20-700q-33 0-56.5-23.5T460-820q0-33 23.5-56.5T540-900q33 0 56.5 23.5T620-820q0 33-23.5 56.5T540-740Z"
+              />
+            </svg>
+            <p>Errands</p>
+          </div>
+        </div>
+      </div>
+      <form
+        action=""
+        class="service-request-form"
+        method="POST"
+        id="service-request-form"
+      >
+        <input type="hidden" id="service-type" name="service_type" />
+        <div class="personal-info">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="username"
+            required
+            placeholder="Eg: John Doe"
+          />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="user_email"
+            placeholder="Eg: JohnDoe@website.com"
+            required
+          />
+          <label for="phone">Phone</label>
+          <input
+            type="tel"
+            id="phone"
+            name="user_phone"
+            placeholder="Eg: +233537285055"
+          />
+        </div>
+        <div class="service-details">
+          <!-- Rendering will be controlled by JS -->
+          <label for="details">Service Details</label>
+          <textarea
+            id="details"
+            name="request_details"
+            placeholder="Please describe what needs to be done. Example go buy me an airpod from Kejetia"
+            required
+          ></textarea>
+        </div>
+        <div class="locations-info">
+          <label for="pick-up">Pick up Location</label>
+
+          <input
+            type="text"
+            id="pick-up"
+            name="pickup_location"
+            placeholder="Please Enter where we are supposed to pickup the package"
+            required
+          />
+          <label for="drop-off">Drop-off Location</label>
+          <input
+            type="text"
+            id="drop-off"
+            name="dropoff_location"
+            placeholder="Where should we drop off the package"
+            required
+          />
+        </div>
+        <div class="additional-info">
+          <label for="additional-info">Any additional Info(Optional)</label>
+
+          <textarea
+            type="text"
+            id="additional-info"
+            name="additional_info"
+            placeholder="Any special instructions?"
+          ></textarea>
+        </div>
+        <button type="submit" class="submit-button">Submit Request</button>
+      </form>
+    </main>
+    <!-- Use javascript to determine the type of service and provide the appropriate service form -->
+  </body>
+</html>
