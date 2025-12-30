@@ -122,7 +122,8 @@ form.addEventListener("submit", (event) => {
     return;
   }
   const formData = new FormData(form);
-  const backend_url = "http://127.0.0.1:9000/api/service_requests/";
+  const backend_url =
+    "https://errand-app-backend.onrender.com/api/service_requests/";
   formData.forEach((value, key) => {
     console.log(`${key}: ${value}`);
   });
